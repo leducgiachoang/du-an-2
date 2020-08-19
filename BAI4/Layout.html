@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Mall</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+	<!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/layout.js"></script>
+	
+	<!-- Poly -->
+    <link href="css/poly.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-app="myApp" class="container">
+        <header class="row" ng-include="'header.html'"></header>
+        <nav class="row" ng-include="'menu.html'"></nav>
+        <div class="poly-sheet row">
+
+            <article class="col-sm-9">
+                <div ng-show="loading = false" class="pull-right label label-info">Loading...</div>
+                <ng-view></ng-view>
+            </article>
+
+            <aside class="col-sm-3">
+                <!--CartInfo-->
+                <div ng-include="'CartInfo.html'" class="poly-cart"></div>
+                <!--/CartInfo-->
+
+                <!--Search-->
+                <div ng-include="'Search.html'" class="nn-cart"></div>
+                <!--/Search-->
+
+                <!--Category-->
+                <div ng-include="'Category.html'" class="panel panel-default"></div>
+                <!--/Category-->
+
+                <!--Supplier-->
+                <div ng-include="'Supplier.html'" class="panel panel-default"></div>
+                <!--/Supplier-->
+
+                <!--Special-->
+                <div ng-include="'Special.html'" class="panel panel-default"></div>
+                <!--/Special-->
+
+            </aside>
+
+            
+        </div>
+
+        <footer ng-include="'footer.html'" class="panel panel-default row"></footer>
+    </div>
+</body>
+</html>
